@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Table from "./table/table";
 import axios from "axios";
+import moment from "moment";
 
 function Main() {
   const [loading, setLoading] = useState(true);
@@ -47,7 +48,12 @@ function Main() {
     { Header: "Podcast title", accessor: "podcastTitle" },
     { Header: "Topic", accessor: "topic" },
     { Header: "Content", accessor: "content" },
-    { Header: "Time stamp", accessor: "timeStamp" },
+    {
+      Header: "Time stamp",
+      accessor: "timeStamp",
+      Cell: ({ row }) =>
+        moment.utc(row.original.timeStamp * 1000).format("HH:mm:ss"),
+    },
   ];
 
   if (loading) return <span>Loading...</span>;
