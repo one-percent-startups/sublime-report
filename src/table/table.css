@@ -1,0 +1,41 @@
+.filter-container {
+    position: relative;
+    display: inline-block;
+}
+
+.filter-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.filter-dropdown {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 150px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-dropdown .filter-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filter-dropdown .filter-item:hover {
+    background-color: #f0f0f0;
+}
+
+.filter-dropdown .filter-item.active {
+    background-color: #007bff;
+    color: white;
+}
